@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.phonegap.plugins.progresshud"
+    version="1.0.0">
+
+    <name>KeyboardToolbarRemover</name>
+    <description>KeyboardToolbarRemover Plugin</description>
+    <license>MIT</license>
+
+    <js-module src="www/keyboard_toolbar_remover.js" name="KeyboardToolbarRemover">
+        <clobbers target="KeyboardToolbarRemover" />
+    </js-module>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/widget/plugins">
+            <feature name="KeyboardToolbarRemover">
+                <param name="ios-package" value="KeyboardToolbarRemover"/>
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/KeyboardToolbarRemover.h" />
+        <source-file src="src/ios/KeyboardToolbarRemover.m" />
+        
+    </platform>
+</plugin>
