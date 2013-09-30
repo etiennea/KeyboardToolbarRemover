@@ -9,6 +9,8 @@
  function KeyboardToolbarRemover() {}
 
  KeyboardToolbarRemover.prototype.show = function() {
+    if(/android/i.test(navigator.userAgent))
+        return;
     var fail = function (error) {
         console.log("Error enabling web form accessory toolbar" + error);
     }
@@ -19,6 +21,8 @@
 };
 
 KeyboardToolbarRemover.prototype.hide = function() {
+    if(/android/i.test(navigator.userAgent))
+        return;
     var fail = function (error) {
         console.log("Error hiding the web form accessory toolbar" + error);
     };
